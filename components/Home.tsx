@@ -15,6 +15,7 @@ import { addDoc, collection } from "firebase/firestore";
 import { useCollection } from "react-firebase-hooks/firestore";
 import { signOut } from "firebase/auth";
 import Chat from "./Chat";
+import serverDetails from "../constants/serverDetails";
 
 const Home = () => {
   const [user, loading] = useAuthState(auth);
@@ -48,10 +49,10 @@ const Home = () => {
           />
         </div>
         <hr className="w-8 mx-auto border border-gray-700" />
-        <ServerIcon iconUrl="/ethereum_logo.jpg" alt="Ethereum Icon" />
-        <ServerIcon iconUrl="/fantom_logo.png" alt="Fantom Icon" />
-        <ServerIcon iconUrl="/polygon_logo.jpg" alt="Polyon Icon" />
-        <ServerIcon iconUrl="/avax_logo.png" alt="Avalanche Icon" />
+
+        {serverDetails.map((server, id) => (
+          <ServerIcon key={id} iconUrl={server.icon} alt={server.description} />
+        ))}
 
         <div className="w-12 h-12 bg-gray-700 serverIcon group hover:bg-discord_green">
           <PlusIcon className="p-3 text-discord_green group-hover:text-white" />
@@ -66,7 +67,7 @@ const Home = () => {
       <div className="flex flex-col bg-gray-700 max-w-[288px]">
         <div className="flex items-center justify-between p-4 text-white transition-all duration-200 ease-in-out border-b border-gray-800 shadow-md cursor-pointer hover:bg-gray-600 w-72">
           <h2 className="text-sm font-bold truncate w-52">
-            blah blah blah blah blah blah blah
+            Ethereum Official Discord
           </h2>
           <HiChevronDown className="w-5 h-5" />
         </div>
