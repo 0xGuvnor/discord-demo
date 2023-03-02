@@ -20,7 +20,7 @@ const ServerIcon = ({ iconUrl, alt }: Props) => {
       <div
         className={`${
           active ? "h-10" : "h-3 group-hover:h-5 group-hover:rounded"
-        } absolute self-center w-3 -ml-5 transition duration-500 ease-linear bg-gray-200 rounded-full`}
+        } absolute self-center w-3 -ml-5 transition-all duration-100 ease-linear bg-gray-200 rounded-full`}
       ></div>
       <Image
         src={iconUrl}

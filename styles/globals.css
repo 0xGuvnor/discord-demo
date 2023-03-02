@@ -20,7 +20,7 @@
   }
 
   .serverIcon {
-    @apply cursor-pointer rounded-full transition duration-500 ease-in-out hover:rounded-2xl;
+    @apply cursor-pointer rounded-[69px] transition-all duration-100 ease-in-out hover:rounded-2xl;
   }
 
   .userIcon {
